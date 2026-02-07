@@ -62,33 +62,46 @@
     <div class="message" id="messageBox"></div>
   </div>
 
-  <script>
+ <script>
   const messages = {
     "HAA": `
-      <p> Dear Friend,</p>
-      <p> I really enjoyed our time working together.</p>
-      <p> With love,<br>Hana</p>
+      <p>Dear Friend,</p>
+      <p>I really enjoyed our time working together.</p>
+      <p>With love,<br>Hana</p>
     `,
     "VIA": `
-      <p> Halo, Kak Vicki (dan Kak Fer, if he shows this to you, haha).</p>
+      <p>Halo, Kak Vicki (dan Kak Fer, if he shows this to you, haha).</p>
     `,
-      "ZAA" `
-      <p> Halo, Zahra. Jujur aku orangnya gampang ngetik sesuatu yang super dangdut, jadi semoga kamu gak bosen baca ketikan ini, ya. First of all, aku mau berterima kasih atas kontribusi kamu selama kita kerja bareng. I really enjoyed work with you, semoga kamu bisa selalu improve in the future ya. Terus jadi orang baik, especially a senior team member, kalau kamu masih lanjut di kantor ini, haha.</p>
-    `};
+    "ZAA": `
+      <p>
+        Halo, Zahra. Jujur aku orangnya gampang ngetik sesuatu yang super dangdut,
+        jadi semoga kamu gak bosen baca ketikan ini, ya.
+        First of all, aku mau berterima kasih atas kontribusi kamu selama kita kerja bareng.
+        I really enjoyed work with you, semoga kamu bisa selalu improve in the future ya.
+        Terus jadi orang baik, especially a senior team member, kalau kamu masih lanjut
+        di kantor ini, haha.
+      </p>
+    `
+  };
 
-    function showMessage() {
-      const input = document.getElementById("initialsInput").value.trim().toUpperCase();
-      const messageBox = document.getElementById("messageBox");
+  function showMessage() {
+    const input = document
+      .getElementById("initialsInput")
+      .value
+      .trim()
+      .toUpperCase();
 
-      if (!input) {
-        messageBox.textContent = "Please enter your initials.";
-        return;
-      }
+    const messageBox = document.getElementById("messageBox");
 
-      if (messages[input]) {
-        messageBox.textContent = messages[input];
-      } else {
-        messageBox.textContent = "No message found for these initials.";
-      }
+    if (!input) {
+      messageBox.textContent = "Please enter your initials.";
+      return;
     }
-  </script>
+
+    if (messages[input]) {
+      messageBox.innerHTML = messages[input]; // ✅ THIS IS IMPORTANT
+    } else {
+      messageBox.textContent = "No message found for these initials.";
+    }
+  }
+</script>
