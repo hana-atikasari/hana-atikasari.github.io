@@ -1,5 +1,6 @@
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HAA's Farewell Notes</title>
   <style>
@@ -9,7 +10,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      margin: 0;
+      padding: 15px;
     }
 
     .container {
@@ -17,31 +20,52 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 500px;
+      width: 90%;
+      max-width: 500px;
       text-align: center;
+    }
+
+    h2 {
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-bottom: 15px;
     }
 
     input {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       font-size: 16px;
       text-transform: uppercase;
       margin-top: 10px;
+      box-sizing: border-box;
     }
 
     button {
       margin-top: 15px;
-      padding: 10px;
+      padding: 14px;
       width: 100%;
-      font-size: 16px;
+      font-size: 17px;
       cursor: pointer;
+      border-radius: 6px;
+      border: none;
+      background: #52796f;
+      color: white;
+    }
+
+    button:hover {
+      background: #354f52;
     }
 
     .message {
       margin-top: 20px;
       font-size: 16px;
       color: #333;
-      min-height: 40px;
+    }
+
+    .message p {
+      text-align: left;
+      line-height: 1.6;
+      margin-bottom: 1em;
     }
   </style>
 </head>
