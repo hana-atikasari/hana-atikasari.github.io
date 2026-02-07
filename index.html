@@ -1,6 +1,74 @@
-<h1> Hi, there!
-<p style="font-family: Arial, sans-serif; font-size: 18px;">I have a message for you. Input your 3-letter initial below, i.e. Hana Atikasari = HAA</p>
-<form method="GET" action="my_result.php">
-    <input type="text" name="my_value">
-    <input type="submit">
-  </form>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Message</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+      min-height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Enter Your Initials</h2>
+    <input
+      type="text"
+      id="initialsInput"
+      placeholder="e.g. HAA"
+      maxlength="5"
+      oninput="showMessage()"
+    >
+    <div class="message" id="messageBox"></div>
+  </div>
+
+  <script>
+    const messages = {
+      "HAA": "Hi HAA! 🌟 This message was made especially for you.",
+      "ABC": "Hello ABC! Hope you're having a great day.",
+      "JDS": "Hey JDS, don’t forget how awesome you are 💪"
+    };
+
+    function showMessage() {
+      const input = document.getElementById("initialsInput").value.toUpperCase();
+      const messageBox = document.getElementById("messageBox");
+
+      if (messages[input]) {
+        messageBox.textContent = messages[input];
+      } else if (input.length > 0) {
+        messageBox.textContent = "No message found for these initials.";
+      } else {
+        messageBox.textContent = "";
+      }
+    }
+  </script>
+
