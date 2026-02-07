@@ -65,23 +65,34 @@
  <script>
   const messages = {
     "HAA": `
-      <p>Dear Friend,</p>
-      <p>I really enjoyed our time working together.</p>
+      <p>Dear myself,</p>
+      <p>You made it. You did so well. Yang tadinya cuma wacana untuk resign sebagai kado tahun umur 25, ternyata betulan terwujud, ya.</p>
+      <p>It's okay. I can assure you that everything is gonna be okay. Kalaupun gak oke, gak papa. Bekingan kita kuat, tinggal nempelin Beliau saja. It's absolutely okay.</p>
+      <p>Bukan keputusan yang mudah, a lot of battles we've been through, dan kamu sudah sampai di titik ini. Please appreciate yourself. You did so well. You did very well.</p>
+      <p>Ayo kita temukan jalur rejeki baru itu, ya. Semangat selalu.</p>
       <p>With love,<br>Hana</p>
     `,
     "VIA": `
-      <p>Halo, Kak Vicki (dan Kak Fer, if he shows this to you, haha).</p>
+      <p>Dear Kak Vicki (dan Kak Fer, if he shows this to you, haha),</p>
+      <p>Akhirnya aku betulan resign, Kak, aowkokawo. Aku mau berterima kasih banget sama Kak Vicki, karena selama kita kerja bareng, despite kerjaan kita seabrek-abrek, tapi aku tetep enjoy ngerjain klien gedong itu.</p>
+      <p>You're one of the best people I've ever met in PwC, terima kasih atas jerih payahnya selama ini, aowkokawokwa. Semoga bahagia selalu dan mendapatkan apa yang kau semogakan yo, Kak, xixi.</p>
+      <p>I really hope we can work together again, in another place. Thank you so matttt skrt skrt</p>
+      <p>With a lot of audacity as your junior,<br>Hana</p>
     `,
     "ZAA": `
-      <p>
-        Halo, Zahra. Jujur aku orangnya gampang ngetik sesuatu yang super dangdut,
-        jadi semoga kamu gak bosen baca ketikan ini, ya.
-        First of all, aku mau berterima kasih atas kontribusi kamu selama kita kerja bareng.
-        I really enjoyed work with you, semoga kamu bisa selalu improve in the future ya.
-        Terus jadi orang baik, especially a senior team member, kalau kamu masih lanjut
-        di kantor ini, haha.
-      </p>
-    `
+      <p>Dear Zahra, teman karaoke terbaikku,</p>
+      <p>Jujur aku orangnya gampang ngetik sesuatu yang super dangdut,jadi semoga kamu gak bosen baca ketikan ini, ya.</p>
+      <p>First of all, aku mau berterima kasih atas kontribusi kamu selama kita kerja bareng. I really enjoyed work with you, semoga kamu bisa selalu improve in the future ya.</p>
+      <p>Terima kasih sudah menjadi orang yang sangat understanding. Selalu jadi orang baik, dan semoga kamu dapat pencerahan juga untuk langkah selanjutnya dalam hidup, ya.</p>
+      <p>With a lot of love as your senior-despite-we-born-in-the-same-year,<br>Hana</p>
+    `,
+    "DIS": `
+      <p>Dear Divantri, my beloved friend despite gue udah mode hontol maxxing,</p>
+      <p>Gak kerasa ya, Div, waktu kita kerja udah selesai, untuk sementara. Gue sangat berterima kasih atas segala hal yang pernah kita lalui bareng, Div. Gila ya, gue bersyukur banget gue kenal sama lo.</p>
+      <p>Kalau throw back ke jaman intern, gue rasa kita adalah partner intern yang paling gacor seantero KAP depan GBK itu. Dengan luntang-lantungnya kita, bloonnya kita, kosongnya kita, tapi gue tetep sangat enjoy melalui beberapa bulan itu sama lo. Divantri impact, yeakh.</p>
+      <p>Semoga lo apa yang lo semogakan, disegerakan sama pemilik jagad raya, ya.</p>
+      <p>With a lot of love as your eternal friend,<br>Hana</p>
+    `,
   };
 
   function showMessage() {
@@ -99,7 +110,7 @@
     }
 
     if (messages[input]) {
-      messageBox.innerHTML = messages[input]; // ✅ THIS IS IMPORTANT
+      messageBox.innerHTML = messages[input];
     } else {
       messageBox.textContent = "No message found for these initials.";
     }
