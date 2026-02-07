@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Personal Message</title>
+  <title>HAA Farewell Notes</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,7 +17,7 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 300px;
+      width: 320px;
       text-align: center;
     }
 
@@ -27,6 +27,14 @@
       font-size: 16px;
       text-transform: uppercase;
       margin-top: 10px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
     }
 
     .message {
@@ -40,14 +48,17 @@
 <body>
 
   <div class="container">
-    <h2>Enter Your Initials</h2>
+    <h2>Hi, there! I have a message for you. Just put your 3-letter initial, i.e. Hana Atikasari = HAA, below!</h2>
+ 
     <input
       type="text"
       id="initialsInput"
       placeholder="e.g. HAA"
       maxlength="5"
-      oninput="showMessage()"
     >
+
+    <button onclick="showMessage()">dor!</button>
+
     <div class="message" id="messageBox"></div>
   </div>
 
@@ -59,16 +70,18 @@
     };
 
     function showMessage() {
-      const input = document.getElementById("initialsInput").value.toUpperCase();
+      const input = document.getElementById("initialsInput").value.trim().toUpperCase();
       const messageBox = document.getElementById("messageBox");
+
+      if (!input) {
+        messageBox.textContent = "Please enter your initials.";
+        return;
+      }
 
       if (messages[input]) {
         messageBox.textContent = messages[input];
-      } else if (input.length > 0) {
-        messageBox.textContent = "No message found for these initials.";
       } else {
-        messageBox.textContent = "";
+        messageBox.textContent = "No message found for these initials.";
       }
     }
   </script>
-
